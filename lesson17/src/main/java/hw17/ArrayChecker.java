@@ -19,15 +19,15 @@ public class ArrayChecker {
 
     public static void main(String[] args) {
         int[] inputArray1 = {1, 4, 4, 1};
-        System.out.println(checkArrayComposition(inputArray1)); // true
+        System.out.println(checkArrayComposition(inputArray1));
 
         int[] inputArray2 = {1, 1, 4, 4};
-        System.out.println(checkArrayComposition(inputArray2)); // true
+        System.out.println(checkArrayComposition(inputArray2));
 
         int[] inputArray3 = {1, 1, 1, 1};
-        System.out.println(checkArrayComposition(inputArray3)); // false
+        System.out.println(checkArrayComposition(inputArray3));
 
         int[] inputArray4 = {4, 4, 4, 4};
-        System.out.println(checkArrayComposition(inputArray4)); // false
+        System.out.println(checkArrayComposition(inputArray4));
     }
 }
