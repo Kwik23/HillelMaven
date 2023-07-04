@@ -23,7 +23,7 @@ public class RockPaperScissorsGame {
 
         System.out.print("Enter the number of games: ");
         int numGames = scanner.nextInt();
-        scanner.nextLine(); // Clear the buffer
+        scanner.nextLine();
 
         totalGames = 0;
         wins = 0;
@@ -38,7 +38,7 @@ public class RockPaperScissorsGame {
             System.out.println("0 - Quit the game");
             System.out.print("Enter the choice number: ");
             int userChoice = scanner.nextInt();
-            scanner.nextLine(); // Clear the buffer
+            scanner.nextLine();
 
             switch (userChoice) {
                 case 0:
@@ -85,16 +85,19 @@ public class RockPaperScissorsGame {
     }
 
     public Result determineWinner(Choice playerChoice, Choice computerChoice) {
-        if (playerChoice == computerChoice) {
-            return Result.DRAW;
-        } else if ((playerChoice == Choice.ROCK && computerChoice == Choice.SCISSORS) ||
-                (playerChoice == Choice.SCISSORS && computerChoice == Choice.PAPER) ||
-                (playerChoice == Choice.PAPER && computerChoice == Choice.ROCK)) {
-            return Result.WIN;
-        } else {
-            return Result.LOSS;
-        }
+        Result[][] results = {
+                {Result.DRAW, Result.LOSS, Result.WIN},
+                {Result.WIN, Result.DRAW, Result.LOSS},
+                {Result.LOSS, Result.WIN, Result.DRAW}
+        };
+
+        int playerIndex = playerChoice.ordinal();
+        int computerIndex = computerChoice.ordinal();
+
+        return results[playerIndex][computerIndex];
     }
+
 }
+
 
 
