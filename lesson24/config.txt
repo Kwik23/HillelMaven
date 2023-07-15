@@ -1,0 +1,4 @@
+FILE: log.txt
+LEVEL: DEBUG
+MAX-SIZE: 1024
+FORMAT: [yyyy-MM-dd HH:mm:ss]
